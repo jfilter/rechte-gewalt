@@ -1,0 +1,13 @@
+{
+	"layers": {
+	    "roads": {
+	        "src": "DEU_adm/DEU_adm1.shp",
+	        "filter": {"HASC_1": "DE.ST"},
+	        "simplify": 13
+	     }
+	},
+
+	"export": {
+   		"width": 850
+	}
+}

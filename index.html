@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://rawgit.com/DmitryBaranovskiy/raphael/master/raphael-min.js"></script>
+        <script src="https://rawgit.com/kartograph/kartograph.js/master/dist/kartograph.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css">
+        <script src="http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(function() {
+                // initialize tooltips
+                $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
+                $.fn.qtip.defaults.style.def = false;
+                var map = kartograph.map('#map');
+                map.loadMap('map.svg', function() {
+                    map.addLayer('context', {
+                        styles: {
+                            stroke: '#aaa',
+                            fill: '#f6f4f2'
+                        }
+                    });
+                    map.addLayer('regions', {
+                        id: 'bg',
+                        styles: {
+                            stroke: '#d8d6d4',
+                            'stroke-width': 10,
+                            'stroke-linejoin': 'round'
+                        }
+                    });
+                    map.addLayer('regions', {
+                        title: function(d) { return d.name },
+                        styles: {
+                            stroke: '#333',
+                            fill: '#fff'
+                        }
+                    });
+
+                    $.ajax({
+                        url: 'cities.json',
+                        dataType: 'json',
+                        success: function(cities) {
+                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([0, 60]);
+                            map.addSymbols({
+                                type: kartograph.Bubble,
+                                data: cities,
+                                location: function(city) {
+                                    return [city.lng, city.lat];
+                                },
+                                radius: function(city) {
+                                    return scale(city.n);
+                                },
+                                tooltip: function(city) {
+                                    return '<h3>'+city.location+'</h3>'+city.n+' visits';
+                                },
+                                sortBy: 'radius desc',
+                                style: 'fill:#800; stroke: #fff; fill-opacity: 0.5;',
+                            });
+                        }
+                    });
+                }, { padding: -5 });
+            });
+        </script>
+
+        <p>This map shows location of German visitors to the Kartograph website in 2012, as measured by <a href="http://piwik.org">Piwik Web Analytics</a>. It uses the <a href="/docs/kartograph.js/#symbol-maps">Symbol Map API</a> and <a href="/docs/kartograph.js/#advanced-tooltips-using-jquery-qtips">qTip tooltips</a>. Please scroll down to see the code behind this map.</p>
+
+        <div id="map" style="border:1px solid #999; margin-bottom:1em">
+        </div>
+    </body>
+</html>
