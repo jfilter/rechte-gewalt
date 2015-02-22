@@ -76,7 +76,7 @@
                         success: function(cities) {
 
 
-                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([1, 25]);
+                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([1, 20]);
                             map.addSymbols({
                                 type: kartograph.Bubble,
                                 data: cities,
@@ -111,12 +111,13 @@
                     </div>
 
                     <br>
-                    <p>In der Zeit ab 2003 wurden in Sachsen-Anhalt über 850 Straften rechter Gesinnung dokumentiert.</p>
+                    <p>Ab 2003 wurden in Sachsen-Anhalt über 850 Straften rechter Gesinnung dokumentiert.</p>
 
                     <p>Klick auf die Kreise, um über die Bericht der Vorfälle zu lesen.</p>
 
                     <br><br><br>
 
+                    <small>
                     <p>Daten: <a href="http://www.mobile-opferberatung.de/monitoring/">Mobile Opferberatung</a></p>
 
                     <p>Idee und Umsetzung: <a href="http://johannesfilter.com">Johannes Filter</a></p>
@@ -126,6 +127,7 @@
                     <p>
                         This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
                     </p>
+                    </small>
                 </div>
                 <div class="col-xs-6 col-md-6">
                     <div class="fullHeight" id="map">
