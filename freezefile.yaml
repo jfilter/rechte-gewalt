@@ -1,9 +1,0 @@
-common:
-
-  database: "sqlite:///data.db"
-  format: json
-
-exports:
-
-  - query: "SELECT location, COUNT(*) as n, lat, lng FROM ST GROUP BY location"
-    filename: "cities.json"

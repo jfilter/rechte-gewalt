@@ -13,10 +13,10 @@ try:
 		if loc == 'Wolfen-Bitterfeld' or  loc == 'Wolfen' or loc == 'Bitterfeld':
 			row['location'] = 'Bitterfeld-Wolfen'
 
-		if loc == 'Dessau' or  loc == 'Dessau Roßlau' or loc == 'Dessau-Rosslau':
+		if loc == 'Dessau' or  loc == 'Dessau Roßlau' or loc == 'Dessau-Rosslau' or loc == 'Roßlau':
 			row['location'] = 'Dessau-Roßlau'
 
-		if loc == 'Eilsleben':
+		if loc == 'Eilsleben' or loc == 'Lutherstadt Eisleben':
 			row['location'] = 'Eisleben'
 
 		if loc == 'Laucha an der Unstrut':
@@ -24,6 +24,16 @@ try:
 
 		if loc == 'Regionalbahn bei Calbe':
 			row['location'] = 'Calbe'
+
+		if loc == 'Lutherstadt Wittenberg':
+			row['location'] = 'Wittenberg'
+
+		# They fucked it up!
+		if loc == 'Polizeirevier Saalekreis':
+			row['location'] = 'Großkugel'
+			row['source'] = 'Polizeirevier Saalekreis'
+
+
 
 		# if row was manipulated
 		if row['location'] != loc:
