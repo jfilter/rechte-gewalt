@@ -84,6 +84,12 @@
                                 },
                                 click: function(data, path, event) {
                                     fillText(data.location, data.incidents, data.n);
+
+                                    if( $(window).width() <= 992 ){
+                                        $('html, body').animate({
+                                            scrollTop: $("#text").offset().top
+                                        }, 2000);
+                                    }
                                 },
 
                                 sortBy: 'radius desc',
