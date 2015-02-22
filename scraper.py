@@ -13,7 +13,7 @@ base_url = 'http://www.mobile-opferberatung.de/monitoring/chronik%s/'
 
 fix_location = re.compile('\(.*|\/.*')
 
-indices = range(2004, 2016)
+indices = range(2003, 2016)
 
 for i in indices:
 
@@ -35,7 +35,13 @@ for i in indices:
 			source = 'Unbekannt'
 
 		head = entry.xpath('./following-sibling::h1[1]/text()')[0]
-		text = entry.xpath('./following-sibling::div[1]/text()')[0].strip()
+
+		# add all parts to one large string
+		raw_text = ""
+		for part in entry.xpath('./following-sibling::div[1]/text()'):
+			raw_text += " " + part
+
+		text = re.sub(r"<!--.*-->", "", raw_text).strip()
 
 		head_split = head.split()
 
