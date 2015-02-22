@@ -13,8 +13,8 @@
         <meta name="description" content="Seit 2003 wurden in Sachsen-Anhalt über 900 Straftaten mit rechtem Hintergrund dokumentiert. Die Karte gibt einen Überblick.">
 
         <!-- Twitter Card data -->
-        <meta name="twitter:card" value="summary">
-        <meta name="twitter:creator" content="@fil_ter">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@fil_ter">
         <meta name="twitter:image" content="http://sachsenanhalt.rechtegewalt.com/preview.png">
         <meta name="twitter:url" content="http://sachsenanhalt.rechtegewalt.com/">
 
@@ -83,7 +83,7 @@
                         success: function(cities) {
 
 
-                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([2, 20]);
+                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([2, 18]);
                             map.addSymbols({
                                 type: kartograph.Bubble,
                                 data: cities,
@@ -135,17 +135,14 @@
 
                     <br><br><br>
 
-                    <small>
-                        <p>Daten: <a href="http://www.mobile-opferberatung.de/monitoring/">Mobile Opferberatung</a></p>
+                        <p><small>Daten: <a href="http://www.mobile-opferberatung.de/monitoring/">Mobile Opferberatung</a></small></p>
 
-                        <p>Idee und Umsetzung: <a href="http://johannesfilter.com">Johannes Filter</a></p>
+                        <p><small>Idee und Umsetzung: <a href="http://johannesfilter.com">Johannes Filter</a></small></p>
 
-                        <p>Framework: <a href="http://kartograph.org">Kartograph.js</a></p>
+                        <p><small>Framework: <a href="http://kartograph.org">Kartograph.js</a></small></p>
 
-                        <p>
-                            This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
-                        </p>
-                    </small>
+                        <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</small></p>
+                    
                 </div>
                 <div class="col-xs-18 col-md-6">
                     <div class="fullHeight" id="map">
