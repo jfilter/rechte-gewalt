@@ -5,10 +5,25 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <meta charset="utf-8">
+        <meta name="author" content="Johannes Filter">
 
         <title>Rechte Gewalt in Sachsen-Anhalt</title>
+
+        <meta name="description" content="Ab 2003 wurden in Sachsen-Anhalt über 850 Straftaten mit rechtem Hintergrund dokumentiert. Die Karte gibt einen Überblick.">
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" value="summary">
+        <meta name="twitter:creator" content="@fil_ter">
+        <meta name="twitter:image" content="http://sachsenanhalt.rechtegewalt.com/preview.png">
+        <meta name="twitter:url" content="http://sachsenanhalt.rechtegewalt.com/">
+
+        <!-- Open Graph data -->
+        <meta property="og:title" content="Rechte Gewalt in Sachsen-Anhalt" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://sachsenanhalt.rechtegewalt.com/" />
+        <meta property="og:image" content="http://sachsenanhalt.rechtegewalt.com/preview.png" />
+        <meta property="og:description" content="Ab 2003 wurden in Sachsen-Anhalt über 850 Straftaten mit rechtem Hintergrund dokumentiert. Die Karte gibt einen Überblick." />
 
         <style type="text/css">
             html, body, .container-fluid, .row, .col-md-6, .col-md-6 + .col-md-3{
@@ -24,7 +39,6 @@
             a, a:hover {
                 color: #333333;
             }
-
         </style>
 
         <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -42,7 +56,7 @@
                 $( "#text" ).html('<h2>' + location + ' <small>' + n +'</small></h2>');
                 for (var i = incidents.length - 1; i >= 0; i--) {
                     var mydate = new Date(incidents[i].date);
-                    $( "#text" ).append( "<p><small>" + mydate.toLocaleDateString('de-DE', { day: "numeric", year: "numeric", month: "short" }) + "</small></p>" );
+                    $( "#text" ).append( "<p><small>" + mydate.toLocaleDateString('de-DE') + "</small></p>" );
                     $( "#text" ).append( "<p>" + incidents[i].text + "</p>" );
                     $( "#text" ).append( "<p><small>Quelle: " + incidents[i].source + "</small></p><hr>" );
                 }
@@ -97,11 +111,8 @@
                             });
 
                             if( $(window).width() <= 992 ){
-                                console.log('DID');
                                 $('[data-hasqtip]').qtip('hide').qtip('disable');
                             }
-                            
-
                         }
                     });
                 });
@@ -117,22 +128,23 @@
                     </div>
 
                     <br>
-                    <p>Ab 2003 wurden in Sachsen-Anhalt über 850 Straften rechter Gesinnung dokumentiert.</p>
+                    
+                    <p>Ab 2003 wurden in Sachsen-Anhalt über 850 Straftaten mit rechtem Hintergrund dokumentiert.</p>
 
-                    <p>Klick auf die Kreise, um über die Bericht der Vorfälle zu lesen.</p>
+                    <p>Klick auf die Kreise, um die Bericht der Vorfälle zu lesen.</p>
 
                     <br><br><br>
 
                     <small>
-                    <p>Daten: <a href="http://www.mobile-opferberatung.de/monitoring/">Mobile Opferberatung</a></p>
+                        <p>Daten: <a href="http://www.mobile-opferberatung.de/monitoring/">Mobile Opferberatung</a></p>
 
-                    <p>Idee und Umsetzung: <a href="http://johannesfilter.com">Johannes Filter</a></p>
+                        <p>Idee und Umsetzung: <a href="http://johannesfilter.com">Johannes Filter</a></p>
 
-                    <p>Framework: <a href="http://kartograph.org">Kartograph.js</a></p>
+                        <p>Framework: <a href="http://kartograph.org">Kartograph.js</a></p>
 
-                    <p>
-                        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
-                    </p>
+                        <p>
+                            This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+                        </p>
                     </small>
                 </div>
                 <div class="col-xs-18 col-md-6">
@@ -140,7 +152,7 @@
                     </div>
                 </div>
                 <div class="col-xs-18 col-md-3">
-                    <div  class="fullHeight" id="text"></div>
+                    <div class="fullHeight" id="text"></div>
                 </div>
             </div>
         </div>
