@@ -131,6 +131,8 @@
                 var mobile = false
                 if( $(window).width() <= 992 ){
                     mobile = true;
+
+                    $(' #infoText').append("Weil du mobil unterwegs bist, wurden die Anzahl der Orte reduziert.");
                 }
 
                 // initialize tooltips
@@ -152,15 +154,11 @@
                         dataType: 'json',
                         success: function(cities) {
 
-                            var upper = 20;
+                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([3, 20]);
 
-                            if ( mobile ) {
-                                upper = 10;
+                            if( mobile ){
+                                cities = cities.filter(function (x) {return x.n > 11})
                             }
-
-                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([3, upper]);
-
-
 
                             map.addSymbols({
                                 type: kartograph.Bubble,
@@ -215,20 +213,22 @@
 
                     <br>
 
-                    <p>Seit 2000 wurden in Brandenburg knapp 1700 Straftaten mit rechtem Hintergrund dokumentiert.</p>
+                    <div id="infoText">
+                        <p>Seit 2000 wurden in Brandenburg knapp 1700 Straftaten mit rechtem Hintergrund dokumentiert.</p>
 
-                    <p>Klick auf die Kreise, um die Bericht der Vorfälle zu lesen.</p>
+                        <p>Klick auf die Kreise, um die Bericht der Vorfälle zu lesen.</p>
 
-                    <br><br>
+                        <br><br>
 
-                    <p><small>Daten: <a href="http://www.opferperspektive.de/category/rechte-angriffe/chronologie-rechter-angriffe">Opferperspektive</a></small></p>
+                        <p><small>Daten: <a href="http://www.opferperspektive.de/category/rechte-angriffe/chronologie-rechter-angriffe">Opferperspektive</a></small></p>
 
-                    <p><small>Idee und Umsetzung: <a href="http://johannesfilter.com">Johannes Filter</a></small></p>
+                        <p><small>Idee und Umsetzung: <a href="http://johannesfilter.com">Johannes Filter</a></small></p>
 
-                    <p><small>Framework: <a href="http://kartograph.org">Kartograph.js</a></small></p>
+                        <p><small>Framework: <a href="http://kartograph.org">Kartograph.js</a></small></p>
 
-                    <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small></p>
-                    <p><small><a href="http://magdego.de/impressum">Impressum</a></small></p>
+                        <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small></p>
+                        <p><small><a href="http://magdego.de/impressum">Impressum</a></small></p>
+                    </div>
                     
                 </div>
                 <div class="col-xs-18 col-md-7">
