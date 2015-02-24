@@ -15,19 +15,23 @@
         <!-- Twitter Card data -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@fil_ter">
-        <meta name="twitter:image" content="preview.png">
+        <meta name="twitter:image" content="http://brandenburg.rechtegewalt.com/preview.png">
         <meta name="twitter:url" content="http://brandenburg.rechtegewalt.com/">
 
         <!-- Open Graph data -->
         <meta property="og:title" content="Rechte Gewalt in Brandenburg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://brandenburg.rechtegewalt.com/" />
-        <meta property="og:image" content="preview.png" />
+        <meta property="og:image" content="http://brandenburg.rechtegewalt.com/preview.png" />
         <meta property="og:description" content="Seit 2000 wurden in Brandenburg knapp 1700 Straftaten mit rechtem Hintergrund dokumentiert. Diese Karte gibt einen Überblick." />
 
         <style type="text/css">
-            html, body, .container-fluid, .row, .col-md-7, .col-md-7 + .col-md-3{
-                height: 100%;
+
+            @media screen and (min-width: 992px) {
+
+                html, body, .container-fluid, .row, .col-md-7, .col-md-7 + .col-md-3{
+                    height: 100%;
+                }
             }
 
             .fullHeight {
@@ -172,7 +176,7 @@
                                 clustering: 'noverlap',
                                 clusteringOpts: {
                                     tolerance: 0.0,
-                                    maxRatio: 0.8
+                                    maxRatio: 0.85
                                 },
                                 aggregate: sumCities,
                                 sortBy: 'radius desc',
