@@ -154,7 +154,7 @@
                         dataType: 'json',
                         success: function(cities) {
 
-                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([3, 20]);
+                            var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([2, 18]);
 
                             if( mobile ){
                                 cities = cities.filter(function (x) {return x.n > 11})
