@@ -60,7 +60,7 @@ function sumCities(cities) {
 };
 
 $(function() {
-    console.log('test');
+    // console.log('test');
     var mobile = false
     if( $(window).width() <= 992 ){
         mobile = true;
@@ -86,7 +86,8 @@ $(function() {
             url: 'cities.json',
             dataType: 'json',
             success: function(cities) {
-
+                console.log(kartograph);
+                
                 var scale = kartograph.scale.sqrt(cities.concat([{ n: 0 }]), 'n').range([2, 18]);
 
                 if( mobile ){
