@@ -10,7 +10,7 @@ locale.setlocale(locale.LC_ALL,'de_De')
 
 db = dataset.connect('sqlite:///data.db')
 
-table = db['t']
+table = db['31032016']
 
 
 def process_page(text):
@@ -49,7 +49,7 @@ def process_page(text):
 
 base_url = 'http://www.opferperspektive.de/category/rechte-angriffe/chronologie-rechter-angriffe/page/%s'
 
-urls = [base_url % i for i in range(1, 171)]
+urls = [base_url % i for i in range(1, 94)]
 
 for url in urls:
 	process_page(requests.get(url).text)

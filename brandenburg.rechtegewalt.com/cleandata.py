@@ -2,7 +2,7 @@ import dataset
 
 db = dataset.connect('sqlite:///data.db')
 
-table = db['t']
+table = db['31032016']
 
 db.begin()
 try:
@@ -18,9 +18,9 @@ try:
 
 		if loc == 'Lübben':
 			row['location'] = 'Lübben (Spreewald)'
-
+# ????
 		if loc == 'Lübbenau/Spreewald':
-			row['location'] = 'Lübben (Spreewald)'
+			row['location'] = 'Lübben (Spreewald)' 
 
 		if loc == 'Lübbenau':
 			row['location'] = 'Lübbenau/Spreewald'

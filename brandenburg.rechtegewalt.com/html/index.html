@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <link rel="stylesheet" type="text/css" href="bower_components/qtip2/jquery.qtip.min.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="author" content="Johannes Filter">
+
+        <title>Rechte Gewalt in Brandenburg</title>
+
+        <meta name="description" content="Seit 2000 wurden in Brandenburg knapp 1700 Straftaten mit rechtem Hintergrund dokumentiert. Diese Karte gibt einen Überblick über die Vorfälle.">
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@fil_ter">
+        <meta name="twitter:image" content="http://brandenburg.rechtegewalt.com/preview.png">
+        <meta name="twitter:url" content="http://brandenburg.rechtegewalt.com/">
+
+        <!-- Open Graph data -->
+        <meta property="og:title" content="Rechte Gewalt in Brandenburg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://brandenburg.rechtegewalt.com/" />
+        <meta property="og:image" content="http://brandenburg.rechtegewalt.com/preview.png" />
+        <meta property="og:description" content="Seit 2000 wurden in Brandenburg knapp 1700 Straftaten mit rechtem Hintergrund dokumentiert. Diese Karte gibt einen Überblick über die Vorfälle." />
+
+        <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://rawgit.com/DmitryBaranovskiy/raphael/master/raphael-min.js"></script>
+        <script src="https://rawgit.com/kartograph/kartograph.js/master/dist/kartograph.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-18 col-md-2">
+                    <div class="page-header">
+                      <h1>Rechte Gewalt<br><small>in Brandenburg</small></h1>
+                    </div>
+
+                    <br>
+
+                    <div id="infoText">
+                        <p>Seit 2000 wurden in Brandenburg knapp 1700 Straftaten mit rechtem Hintergrund dokumentiert. Diese Karte gibt einen Überblick über die Vorfälle.</p>
+                        <br><hr>
+                        <p><small>Stand: 15.3.2016</small></p>
+                        <p><small>Daten: <a href="http://www.opferperspektive.de/category/rechte-angriffe/chronologie-rechter-angriffe">Opferperspektive</a></small></p>
+                        <p><small>Autor: <a href="http://johannesfilter.com">Johannes Filter</a></small></p>
+
+                        <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small></p>
+
+                        <hr>
+
+                        <p><small><a href="http://rechtegewalt.com">Mehr Karten</a></small></p>
+                    </div>
+                    
+                </div>
+                <div class="col-xs-18 col-md-7">
+                    <div class="fullHeight" id="map">
+                    </div>
+                </div>
+                <div class="col-xs-18 col-md-3">
+                <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+                    <div class="fullHeight" id="text">
+                        <br><br><p>Klick auf die Kreise, um die Bericht der Vorfälle zu lesen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="all.js"></script>
+        <script src="script.min.js"></script>
+    </body>
+</html>

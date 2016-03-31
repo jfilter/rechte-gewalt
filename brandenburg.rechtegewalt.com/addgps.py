@@ -2,11 +2,11 @@ import dataset
 import requests
 import time
 
-base_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=%s'
+base_url = 'http://maps.googleapis.com/maps/api/geocode/json?address=%s'
 
 db = dataset.connect('sqlite:///data.db')
 
-table = db['t']
+table = db['31032016']
 
 results = []
 for row in table.distinct('location'):

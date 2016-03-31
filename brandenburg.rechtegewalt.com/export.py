@@ -3,7 +3,9 @@ import json
 
 db = dataset.connect('sqlite:///data.db')
 
-locations = db.query('SELECT location, COUNT(*) as n, lat, lng FROM t GROUP BY location')
+tableName = "`31032016`"
+
+locations = db.query('SELECT location, COUNT(*) as n, lat, lng FROM ' + tableName + ' GROUP BY location')
 
 result = []
 
@@ -17,7 +19,7 @@ for location in locations:
 
 	count = 0
 
-	for incident in db['t'].find(location=location['location'], order_by='date'):
+	for incident in db.query("SELECT * from " + tableName + " where location = '" + location['location'] + "' order by date"):
 
 		count += 1
 
@@ -35,5 +37,5 @@ for location in locations:
 
 print(result)
 
-with open('cities.json', 'w') as fp:
+with open('html/cities.json', 'w') as fp:
     json.dump(result, fp)
