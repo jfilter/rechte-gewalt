@@ -112,7 +112,7 @@ $(function() {
                             return 'Frankfurt';                                   
                         else return null;
                     },
-                    labelattrs: { 'font-size': 6, 'fill': 'black' },
+                    labelattrs: { 'font-size': 8, 'fill': 'black' },
                     center: false,
 
                     tooltip: function(city) {

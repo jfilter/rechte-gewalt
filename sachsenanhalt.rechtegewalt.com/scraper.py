@@ -13,7 +13,7 @@ base_url = 'http://www.mobile-opferberatung.de/monitoring/chronik%s/'
 
 fix_location = re.compile('\(.*|\/.*')
 
-indices = range(2003, 2016)
+indices = range(2003, 2017)
 
 for i in indices:
 
