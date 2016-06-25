@@ -1,13 +1,26 @@
 function fillText(data) {
 
-    $( '#text' ).html('');
+    $( '#text' ).html('')
+        .scrollTop();
 
     var all = data.allLocations;
 
     // clustered cities?
     if ( all ) {
         for ( var i = 0; i < all.length; i++ ) {
-            $( "#text" ).append('<h2>' + all[i].location + ' <small>' + all[i].n +'</small></h2>');
+            if ( i ) {
+                const ii = i
+                var newP = $('<h5></h5>');
+                newP.html("gehe zu: " + all[ii].location + " <small>" + all[ii].n + "</small>");
+                newP.css("cursor", "pointer");
+                newP.click( function() {
+                    var headingId = "#" + escape(all[ii].location).replace('%','');
+                    console.log(this)
+                    $('#text').scrollTop($('#text').scrollTop() + $(headingId).position().top);
+                });
+                newP.insertAfter("#text h2:first-child");
+            }
+            $( "#text" ).append('<h2 id=' + escape(all[i].location).replace('%','') + '>' + all[i].location + ' <small>' + all[i].n +'</small></h2>');
             fillIncidents( all[i].incidents );
         }
     } else {

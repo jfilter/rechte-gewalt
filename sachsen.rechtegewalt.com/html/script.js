@@ -12,6 +12,7 @@ function fillText(data) {
                 const ii = i
                 var newP = $('<h5></h5>');
                 newP.html("gehe zu: " + all[ii].location + " <small>" + all[ii].n + "</small>");
+                newP.css("cursor", "pointer");
                 newP.click( function() {
                     var headingId = "#" + escape(all[ii].location).replace('%','');
                     console.log(this)
