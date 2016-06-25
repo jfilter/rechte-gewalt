@@ -1,4 +1,4 @@
-function fillText(data) {
+function fillText(data, mobile) {
 
     $( '#text' ).html('')
         .scrollTop();
@@ -8,15 +8,21 @@ function fillText(data) {
     // clustered cities?
     if ( all ) {
         for ( var i = 0; i < all.length; i++ ) {
-            if ( i ) {
+            if (i) {
                 const ii = i
                 var newP = $('<h5></h5>');
                 newP.html("gehe zu: " + all[ii].location + " <small>" + all[ii].n + "</small>");
                 newP.css("cursor", "pointer");
                 newP.click( function() {
                     var headingId = "#" + escape(all[ii].location).replace('%','');
-                    console.log(this)
-                    $('#text').scrollTop($('#text').scrollTop() + $(headingId).position().top);
+
+                    if (mobile) {
+                        $('html, body').animate({
+                            scrollTop: $(headingId).offset().top
+                        }, 500); 
+                    } else {                  
+                        $('#text').scrollTop($('#text').scrollTop() + $(headingId).position().top);
+                    }
                 });
                 newP.insertAfter("#text h2:first-child");
             }
@@ -134,7 +140,7 @@ $(function() {
                         return '<h3>'+city.location+'</h3>'+city.n+' Vorfälle';
                     },
                     click: function(data, path, event) {
-                        fillText(data);
+                        fillText(data, mobile);
 
                         if( data.allLocations )
                             var loc = data.allLocations[0].location;
