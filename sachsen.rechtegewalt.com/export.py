@@ -35,5 +35,5 @@ for location in locations:
 
 print(result)
 
-with open('cities.json', 'w') as fp:
+with open('html/cities.json', 'w') as fp:
     json.dump(result, fp)
