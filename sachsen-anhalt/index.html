@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <link rel="stylesheet" type="text/css" href="bower_components/qtip2/jquery.qtip.min.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="author" content="Johannes Filter">
+
+        <title>Rechte Gewalt in Sachsen-Anhalt</title>
+
+        <meta name="description" content="Seit 2000 wurden in Sachsen-Anhalt knapp 1700 Straftaten mit rechtem Hintergrund dokumentiert. Diese Karte gibt einen Überblick über die Vorfälle.">
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@fil_ter">
+        <meta name="twitter:image" content="https://vis.one/rechte-gewalt/sachsen-anhalt/preview.png">
+        <meta name="twitter:url" content="https://vis.one/rechte-gewalt/sachsen-anhalt/">
+
+        <!-- Open Graph data -->
+        <meta property="og:title" content="Rechte Gewalt in Sachsen-Anhalt" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vis.one/rechte-gewalt/sachsen-anhalt/" />
+        <meta property="og:image" content="https://vis.one/rechte-gewalt/sachsen-anhalt/preview.png" />
+        <meta property="og:description" content="Seit 2000 wurden in Sachsen-Anhalt knapp 1700 Straftaten mit rechtem Hintergrund dokumentiert. Diese Karte gibt einen Überblick über die Vorfälle." />
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-18 col-md-2">
+                    <div class="page-header">
+                      <h1>Rechte Gewalt<br><small>in Sachsen-Anhalt</small></h1>
+                    </div>
+
+                    <br>
+
+                    <div id="infoText">
+                        <p>Seit 2003 wurden in Sachsen-Anhalt knapp 1100 Straftaten mit rechtem Hintergrund dokumentiert. Diese Karte gibt einen Überblick über die Vorfälle.</p>
+                        <br><hr>
+                        <p><small>Stand: 10.6.2016</small></p>
+                        <p><small>Daten: <a href="//www.mobile-opferberatung.de/monitoring/">Mobile Opferberatung</a></small></p>
+                        <p><small>Autor: <a href="//johannesfilter.com">Johannes Filter</a></small></p>
+
+                        <p><small>This work is licensed under a <a rel="license" href="//creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small></p>
+
+                        <hr>
+
+                        <p><small><a href="./..">Mehr Karten</a></small></p>
+                    </div>
+                    
+                </div>
+                <div class="col-xs-18 col-md-7">
+                    <div class="fullHeight" id="map">
+                    </div>
+                </div>
+                <div class="col-xs-18 col-md-3">
+                <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+                    <div class="fullHeight" id="text">
+                        <br><br><p>Klick auf die Kreise, um die Bericht der Vorfälle zu lesen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="all.js"></script>
+        <!-- Something is wrong with the current kartograph stuff. Fuck it. -->
+        <script src="kartograph.min.js"></script>
+        <script src="script.min.js"></script>
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//vis.one/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+    </body>
+</html>
